@@ -1,0 +1,108 @@
+.education-card {
+  position: relative;
+  padding: clamp(28px, 5vw, 48px);
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background: linear-gradient(160deg, rgba(11, 18, 36, 0.75), rgba(11, 18, 36, 0.4));
+  box-shadow: 0 24px 60px rgba(3, 6, 14, 0.4);
+  overflow: hidden;
+}
+
+.education-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--cyan), var(--violet));
+}
+
+.education-card-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.education-institution {
+  margin: 0;
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.education-degree {
+  margin: 10px 0 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--blue);
+}
+
+.education-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(53, 214, 232, 0.4);
+  color: var(--cyan);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.education-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 10px var(--cyan);
+  animation: status-pulse 2.4s ease-in-out infinite;
+}
+
+.education-field {
+  margin: 26px 0 0;
+  max-width: 64ch;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.coursework {
+  margin-top: clamp(32px, 5vw, 48px);
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+
+.coursework-list {
+  margin-top: 22px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 12px 28px;
+}
+
+.coursework-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+  color: #dfe8ff;
+  font-size: 0.98rem;
+}
+
+.coursework-index {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+
+@keyframes status-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(0.8); }
+}

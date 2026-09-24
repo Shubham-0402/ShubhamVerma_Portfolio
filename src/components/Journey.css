@@ -1,0 +1,127 @@
+.journey-track {
+  position: relative;
+}
+
+.journey-track::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  transform: translateX(-0.5px);
+  background: linear-gradient(
+    180deg,
+    transparent,
+    var(--cyan) 8%,
+    var(--blue) 30%,
+    var(--violet) 55%,
+    var(--amber) 80%,
+    transparent
+  );
+  opacity: 0.35;
+}
+
+.journey-stage {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: clamp(36px, 6vw, 72px);
+  padding-block: clamp(26px, 4vw, 40px);
+}
+
+.journey-marker {
+  position: absolute;
+  left: 50%;
+  top: 42px;
+  width: 11px;
+  height: 11px;
+  transform: translateX(-50%) rotate(45deg);
+  background: var(--bg);
+  border: 2px solid var(--cyan);
+  z-index: 1;
+}
+
+.journey-stage:nth-child(4n + 2) .journey-marker { border-color: var(--blue); }
+.journey-stage:nth-child(4n + 3) .journey-marker { border-color: var(--violet); }
+.journey-stage:nth-child(4n + 4) .journey-marker { border-color: var(--amber); }
+
+.journey-card {
+  max-width: 460px;
+  justify-self: end;
+  text-align: right;
+}
+
+.journey-stage--even .journey-card {
+  grid-column: 2;
+  justify-self: start;
+  text-align: left;
+}
+
+.journey-card-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.journey-stage--odd .journey-card-top {
+  justify-content: flex-end;
+}
+
+.journey-arc {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3.4vw, 2.5rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--cyan);
+}
+
+.journey-stage:nth-child(4n + 2) .journey-arc { color: var(--blue); }
+.journey-stage:nth-child(4n + 3) .journey-arc { color: var(--violet); }
+.journey-stage:nth-child(4n + 4) .journey-arc { color: var(--amber); }
+
+.journey-number {
+  letter-spacing: 0.18em;
+}
+
+.journey-card h3 {
+  margin: 0 0 10px;
+  font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.journey-card p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+@media (max-width: 860px) {
+  .journey-track::before {
+    left: 10px;
+  }
+
+  .journey-stage {
+    grid-template-columns: 1fr;
+    padding-left: 48px;
+  }
+
+  .journey-stage--odd .journey-card,
+  .journey-stage--even .journey-card {
+    grid-column: 1;
+    justify-self: start;
+    text-align: left;
+  }
+
+  .journey-stage--odd .journey-card-top,
+  .journey-stage--even .journey-card-top {
+    justify-content: flex-start;
+  }
+
+  .journey-marker {
+    left: 6px;
+    top: 40px;
+  }
+}

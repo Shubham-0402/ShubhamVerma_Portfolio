@@ -1,0 +1,28 @@
+.section-head {
+  max-width: 780px;
+  margin-bottom: clamp(44px, 7vw, 72px);
+}
+
+.section-head .section-title span {
+  color: var(--cyan);
+}
+
+.section-head--center {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.section-head--center .eyebrow {
+  justify-content: center;
+}
+
+.section-head--center .eyebrow::after {
+  content: '';
+  width: 26px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--cyan));
+}
+
+.section-head--center .lede {
+  margin-inline: auto;
+}
