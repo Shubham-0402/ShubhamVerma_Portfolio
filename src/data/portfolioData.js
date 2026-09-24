@@ -2,14 +2,8 @@
  * SHUBHAM VERMA — PORTFOLIO DATA
  * ------------------------------------------------------------
  * Everything personal on this site is defined here so it can be
- * updated in one place. Placeholders use the YOUR_* / *_HERE
- * convention and are rendered visibly as "to edit" chips.
- *
- * Replace:
- *   email       -> real email address
- *   github      -> https://github.com/<username>
- *   linkedin    -> https://www.linkedin.com/in/<username>
- *   location    -> city / country (optional)
+ * updated in one place. This file is the single source of truth
+ * for all content rendered across the portfolio.
  */
 
 export const personal = {
@@ -20,17 +14,20 @@ export const personal = {
   shortMark: 'SV',
   roles: ['AI/ML STUDENT', 'DEVELOPER', 'BUILDER', 'EXPERIMENTER'],
   heroIntro:
-    "I'm an AI/ML student who learns by building — turning ideas into real projects with Python, machine learning, computer vision, and the web.",
+    "Curious AI/ML student, full-stack learner, and builder — I love exploring new technologies and turning ideas into real AI and software projects.",
   heroStatement: 'Learning, building, and experimenting at the intersection of AI, software, and the web.',
   tagline: 'Still learning. Still building. Still becoming.',
   photo: '/shubham-photo.jpg',
   photoAlt: 'Shubham Verma — AI/ML student and developer',
   photoPosition: '50% 15%',
-  email: 'YOUR_EMAIL_HERE',
-  phone: 'YOUR_PHONE_HERE',
-  github: 'YOUR_GITHUB_URL_HERE',
-  linkedin: 'YOUR_LINKEDIN_URL_HERE',
-  location: 'YOUR_LOCATION_HERE',
+  email: 'shubhamv0437@gmail.com',
+  phoneIndia: '+91 7250834662',
+  phoneNepal: '+977 9842644498',
+  location: 'Trichy, Tamil Nadu, India',
+  github: 'https://github.com/Shubham-0402',
+  linkedin: 'https://www.linkedin.com/in/shubhamverma-aiml',
+  instagram: 'https://www.instagram.com/_shubham_verma_4/',
+  facebook: 'https://www.facebook.com/profile.php?id=100041730580451',
 }
 
 export const navigation = [
@@ -46,40 +43,28 @@ export const navigation = [
 /* Moving display-board text. `tone` maps to a palette color. */
 export const marquee = {
   words: [
-    { text: 'AI / ML', tone: 'cyan' },
-    { text: 'PYTHON', tone: 'blue' },
-    { text: 'MACHINE LEARNING', tone: 'violet' },
-    { text: 'JAVA', tone: 'amber' },
-    { text: 'WEB DEVELOPMENT', tone: 'blue' },
-    { text: 'COMPUTER VISION', tone: 'cyan' },
-    { text: 'BUILD', tone: 'amber' },
-    { text: 'CREATE', tone: 'cyan' },
-    { text: 'EXPERIMENT', tone: 'violet' },
-    { text: 'LEARN', tone: 'blue' },
-    { text: 'CODE', tone: 'white' },
-    { text: 'PROBLEM SOLVING', tone: 'violet' },
-    { text: 'FULL-STACK', tone: 'cyan' },
-    { text: 'DATA', tone: 'blue' },
-    { text: 'SOFTWARE', tone: 'white' },
-    { text: 'IDEAS → CODE', tone: 'amber' },
-    { text: 'LEARNING → BUILDING', tone: 'cyan' },
+    { text: 'Machine Learning', tone: 'violet' },
+    { text: 'Full-Stack Development', tone: 'cyan' },
+    { text: 'React', tone: 'blue' },
+    { text: 'AI APIs', tone: 'amber' },
+    { text: 'Java', tone: 'white' },
   ],
 }
 
 export const about = {
   eyebrow: '01 · About',
   heading: 'Driven by curiosity. Focused on building.',
-  accent: 'I learn by doing — building, breaking, fixing, and rebuilding until things actually work.',
+  accent: "I explore new technologies restlessly, build real projects relentlessly, and add a little creativity to everything I make.",
   paragraphs: [
-    'I am an AI/ML student studying machine learning while teaching myself practical software development. My work sits at the intersection of AI, computer vision, and the web — where ideas become applications people can use.',
-    'Instead of relying only on theory, I learn through projects: writing code, reading errors, experimenting with models and APIs, and iterating until a solution feels real. Every build teaches me something the textbooks cannot.',
-    'This portfolio is my home base — my story, my projects, and the work I am still exploring.',
+    "I'm Shubham Verma, a student who loves to engage with machines, explore new technologies, and stays enthusiastic about learning and developing AI.",
+    'Curiosity drives everything I do. I learn continuously — watching how tools work, experimenting with what is new — and I build real-world software projects to turn that learning into something useful. I like adding a touch of creativity to every project I make.',
+    'This portfolio is my home base — my journey as an AI/ML student, developer, and builder, and the work I am still exploring.',
   ],
   highlights: [
-    { label: 'Primary Focus', value: 'AI / ML & Computer Vision' },
-    { label: 'Engineering', value: 'Full-Stack Web & Software' },
-    { label: 'Methodology', value: 'Project-Based Learning & Prototyping' },
-    { label: 'Current Status', value: 'Student & Active Builder' },
+    { label: 'Primary Focus', value: 'AI / ML & Full-Stack Development' },
+    { label: 'Current Phase', value: 'Learning & Building' },
+    { label: 'Languages', value: 'Nepali · Hindi · English · Bhojpuri · Maithili' },
+    { label: 'Professional Direction', value: 'AI/ML Engineer · Full-Stack Developer' },
   ],
 }
 
@@ -144,39 +129,40 @@ export const skills = {
   eyebrow: '03 · Skills',
   heading: 'A modern toolkit, shaped by active projects.',
   intro:
-    'The languages, frameworks, and tools I use while building and experimenting. No fake percentages — competence grows with every line of code written.',
+    'The languages, frameworks, and tools I use while learning and building — kept honest, no fake percentages.',
   categories: [
     {
       index: 'A',
       name: 'Programming',
       accent: 'cyan',
-      items: ['Python', 'Java', 'C', 'C++'],
+      items: ['Python', 'C', 'C++', 'Java', 'JavaScript'],
     },
     {
       index: 'B',
-      name: 'Web Development',
+      name: 'Web',
       accent: 'blue',
-      items: ['HTML5', 'CSS3', 'JavaScript', 'React'],
+      items: ['HTML', 'CSS', 'React', 'Flask'],
     },
     {
       index: 'C',
-      name: 'AI & Data',
+      name: 'Database',
       accent: 'violet',
-      items: ['Machine Learning', 'Computer Vision', 'Data Analysis', 'AI APIs'],
+      items: ['SQL'],
     },
     {
       index: 'D',
-      name: 'Developer Tools',
+      name: 'Tools / Version Control',
       accent: 'amber',
-      items: ['Git', 'GitHub', 'VS Code'],
+      items: ['Git', 'GitHub'],
     },
   ],
-  focusLabel: 'Currently focusing on',
+  focusLabel: 'Future direction',
   focusAreas: [
-    'Building end-to-end full-stack web applications',
-    'Integrating computer vision & ML models into web interfaces',
-    'Clean code architecture & accessible component design',
-    'Version control workflows & continuous self-learning',
+    'Deep Learning',
+    'Machine Learning & proper prompting',
+    'Full-Stack Development',
+    'Data Science',
+    'More AI/ML development',
   ],
 }
 
@@ -184,44 +170,44 @@ export const projects = {
   eyebrow: '04 · Projects',
   heading: 'Selected work & applications.',
   lede:
-    'The things I have actually built. Each one is a real, functioning project — a lesson in what happens when ideas meet code.',
-  note: 'Replace the link placeholders with your live repository and demo URLs in src/data/portfolioData.js.',
+    'Things I have actually built — real, working projects that turn ideas into code.',
+  note: 'Real projects built to solve real problems — every repository is open on GitHub.',
   items: [
     {
       number: '01',
       featured: true,
-      title: 'AI Face Recognition Attendance System',
+      title: 'Smart Face Recognition Attendance System',
       category: 'AI / Computer Vision',
       summary:
-        'An intelligent computer vision system that detects and recognizes faces from a live video stream to automate attendance tracking.',
+        'A face-recognition based attendance system designed to recognize multiple faces at once and reduce the time and manual effort required for classroom attendance.',
       built:
-        'A video-capture pipeline that processes camera frames to detect faces, recognize them against a student dataset, and record presence automatically.',
+        'An end-to-end face recognition pipeline built with Flask, OpenCV, and machine learning libraries to read camera input and recognize faces against a stored dataset.',
       does:
-        'Replaces manual attendance marking — when a person steps in front of the camera, the system matches their face and logs them as present.',
+        'Helps prevent proxy attendance — the student must actually be physically present for their face to be recognized. A possible real-world extension is CCTV integration, where classroom cameras mark attendance automatically.',
       how:
-        'Camera frames are analyzed for face detection; detected regions are compared with the stored dataset; a successful match registers an attendance entry.',
-      technologies: ['Python', 'OpenCV', 'Computer Vision', 'Machine Learning'],
+        'Camera frames are processed for face detection and recognition using the dataset. Recognition depends on sufficiently good-quality CCTV/camera input for reliable results.',
+      technologies: ['Flask', 'OpenCV', 'NumPy', 'Scikit-learn', 'MediaPipe', 'Pandas'],
       visual: 'vision',
-      githubLink: 'YOUR_GITHUB_URL_HERE',
-      demoLink: 'YOUR_LIVE_DEMO_HERE',
+      githubLink: 'https://github.com/Shubham-0402/Smart-Face-Recognition-System',
+      demoLink: '',
     },
     {
       number: '02',
       featured: false,
-      title: 'Chemistry Lab Assistant',
+      title: 'SRM Lab Assistance / Chemistry Lab Assistant',
       category: 'Web Application / Study Tool',
       summary:
-        'An interactive web tool that supports chemistry lab work — organizing reactions, safety guidelines, element properties, and formula references.',
+        'A web platform created to assist students with first-year chemistry laboratory experiments at SRM Trichy.',
       built:
-        "A structured reference web app with an interactive UI and organized, searchable chemistry data.",
+        'A Flask-based platform that hosts experiment materials, handwritten laboratory notes, experiment PDFs, notebook information, and calculation techniques.',
       does:
-        'Gives a chemistry student quick access to reactions, safety notes, element details, and formulas while working in the lab.',
+        'Students enter the values collected during an experiment, and the system performs the required calculations and generates the output.',
       how:
-        'A React front end organizes chemistry content into data modules with search and filter, so the right reference is always a glance away.',
-      technologies: ['React', 'JavaScript', 'HTML5', 'CSS3'],
+        'The generated result can be downloaded as a PDF containing the student\'s name.',
+      technologies: ['Flask', 'Flask-CORS', 'Matplotlib', 'ReportLab'],
       visual: 'lab',
-      githubLink: 'YOUR_GITHUB_URL_HERE',
-      demoLink: 'YOUR_LIVE_DEMO_HERE',
+      githubLink: 'https://github.com/Shubham-0402/SRM_LAB-Assistance',
+      demoLink: '',
     },
     {
       number: '03',
@@ -229,35 +215,47 @@ export const projects = {
       title: 'Sign Language to Text and Speech',
       category: 'AI Accessibility Project',
       summary:
-        'An accessibility-focused project that translates sign language gestures into real-time text and speech using computer vision and machine learning.',
+        'An AI-based system that uses a pretrained model to translate sign language into text and speech.',
       built:
-        'A hand-tracking and classification pipeline that maps captured gestures to text, paired with a speech-synthesis output.',
+        'A camera-based pipeline with a pretrained model that processes a performed sign and converts it into text, speech, or both.',
       does:
-        'Lets a signer communicate live — gestures are seen by the camera, converted to words on screen, and spoken aloud.',
+        'Designed to give non-speaking people another way to communicate in banks, offices, hospitals, and other service environments.',
       how:
-        'Webcam frames are analyzed for hand positions; a model classifies each gesture; the mapped text is displayed and read through speech synthesis.',
-      technologies: ['Python', 'Computer Vision', 'AI APIs', 'Speech Synthesis'],
+        'The user opens the camera and performs a sign; the model processes the input and returns text and/or speech. The user needs to know the relevant sign language for the system to interpret the signs.',
+      technologies: [
+        'Flask',
+        'PyTorch',
+        'Transformers',
+        'timm',
+        'MediaPipe',
+        'tqdm',
+        'Scikit-learn',
+        'XGBoost',
+        'Pandas',
+        'OpenCV',
+        'NumPy',
+      ],
       visual: 'sign',
-      githubLink: 'YOUR_GITHUB_URL_HERE',
-      demoLink: 'YOUR_LIVE_DEMO_HERE',
+      githubLink: 'https://github.com/Shubham-0402/sign-language-to-text-and-speech',
+      demoLink: '',
     },
     {
       number: '04',
       featured: false,
       title: 'Personal Portfolio',
-      category: 'Web Experience / Storytelling',
+      category: 'Web Experience',
       summary:
-        'This website — a clean, editorial web experience presenting my background, skills, journey, and projects with refined typography and smooth motion.',
+        'My personal portfolio website, built to present my journey as an AI/ML student, developer, learner, and builder.',
       built:
-        'A responsive single-page site built with React and Vite, driven entirely by one central data file.',
+        'A React and Vite site driven entirely by one central data file, bringing together my projects, skills, journey, experiments, education, and contact information.',
       does:
-        'Introduces me, my work, and my direction as a developer in one polished, memorable experience.',
+        'Showcases my work, learning path, and direction in one place. Currently building — it evolves as I do.',
       how:
-        'A component-based React structure reads all content from src/data/portfolioData.js; CSS powers the atmosphere, marquee, and scroll reveals.',
-      technologies: ['React', 'JavaScript', 'Vite', 'CSS3'],
+        'A component-based React structure reads all content from this data file; CSS powers the atmosphere, marquee, and scroll reveals.',
+      technologies: ['React', 'JavaScript', 'HTML', 'CSS'],
       visual: 'web',
-      githubLink: 'YOUR_GITHUB_URL_HERE',
-      demoLink: '#home',
+      githubLink: 'https://github.com/Shubham-0402/ShubhamVerma_Portfolio',
+      demoLink: '',
     },
   ],
 }
@@ -302,33 +300,27 @@ export const experiments = {
 export const education = {
   eyebrow: '06 · Education',
   heading: 'Academic foundation & continuous learning.',
-  institution: 'YOUR_COLLEGE_NAME',
-  degree: 'YOUR_DEGREE_DETAILS',
-  field: 'Artificial Intelligence, Machine Learning & Software Development',
-  status: 'Current Student',
-  coursework: [
-    'Data Structures & Algorithms',
-    'Object-Oriented Programming (Java / C++)',
-    'Machine Learning & Data Analysis',
-    'Computer Vision Fundamentals',
-    'Web Architecture & Front-End Design',
-    'Database Systems & Software Logic',
-  ],
+  institution: 'SRM Institute of Science and Technology (SRMIST), Tiruchirappalli',
+  degree:
+    'B.Tech in Computer Science Engineering with specialization in Artificial Intelligence and Machine Learning',
+  field: 'Specialization in Artificial Intelligence and Machine Learning',
+  status: 'Expected completion 2029',
+  coursework: [],
 }
 
 export const development = {
   eyebrow: '07 · Development',
   heading: 'Explore my code & repositories.',
-  text: 'I build in public — projects, experiments, and source code live on GitHub. Inspect my commit history and see how everything here is made.',
-  githubUrl: 'YOUR_GITHUB_URL_HERE',
-  linkedinUrl: 'YOUR_LINKEDIN_URL_HERE',
+  text: 'I build in public — projects, experiments, and source code live on GitHub. Explore the repositories and see how everything here is made.',
+  githubUrl: 'https://github.com/Shubham-0402',
+  linkedinUrl: 'https://www.linkedin.com/in/shubhamverma-aiml',
 }
 
 export const contact = {
   eyebrow: '08 · Contact',
   heading: "Let's build something.",
-  text: 'Whether you want to discuss AI/ML, web development, a project idea, or collaboration — my inbox is open.',
-  closingTitle: 'Still building.',
+  text: 'Whether you want to discuss AI/ML, software development, a project idea, or collaboration — my inbox is open.',
+  closingTitle: 'Still learning.',
   closingLine: 'This portfolio is a work in progress — just like I am.',
 }
 

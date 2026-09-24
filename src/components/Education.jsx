@@ -41,17 +41,19 @@ export default function Education() {
 
           <p className="education-field">{education.field}</p>
 
-          <div className="coursework">
-            <p className="mono-label">Academic & practical focus</p>
-            <ul className="coursework-list">
-              {education.coursework.map((item, index) => (
-                <li key={item}>
-                  <span className="coursework-index">0{index + 1}</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
+          {education.coursework.length > 0 && (
+            <div className="coursework">
+              <p className="mono-label">Academic & practical focus</p>
+              <ul className="coursework-list">
+                {education.coursework.map((item, index) => (
+                  <li key={item}>
+                    <span className="coursework-index">0{index + 1}</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </Reveal>
       </div>
     </section>

@@ -5,8 +5,6 @@ import './Contact.css'
 
 export default function Contact() {
   const emailPending = isPlaceholder(personal.email)
-  const githubPending = isPlaceholder(personal.github)
-  const linkedinPending = isPlaceholder(personal.linkedin)
 
   const rows = [
     {
@@ -17,18 +15,56 @@ export default function Contact() {
       external: false,
     },
     {
+      label: 'Phone (India)',
+      value: personal.phoneIndia,
+      href: `tel:${personal.phoneIndia.replace(/\s/g, '')}`,
+      pending: isPlaceholder(personal.phoneIndia),
+      external: false,
+    },
+    {
+      label: 'Phone (Nepal)',
+      value: personal.phoneNepal,
+      href: `tel:${personal.phoneNepal.replace(/\s/g, '')}`,
+      pending: isPlaceholder(personal.phoneNepal),
+      external: false,
+    },
+    {
+      label: 'Location',
+      value: personal.location,
+    },
+    {
       label: 'GitHub',
       value: personal.github,
       href: personal.github,
-      pending: githubPending,
+      pending: isPlaceholder(personal.github),
       external: true,
     },
     {
       label: 'LinkedIn',
       value: personal.linkedin,
       href: personal.linkedin,
-      pending: linkedinPending,
+      pending: isPlaceholder(personal.linkedin),
       external: true,
+    },
+    {
+      label: 'Instagram',
+      value: personal.instagram,
+      href: personal.instagram,
+      pending: isPlaceholder(personal.instagram),
+      external: true,
+    },
+    {
+      label: 'Facebook',
+      value: personal.facebook,
+      href: personal.facebook,
+      pending: isPlaceholder(personal.facebook),
+      external: true,
+    },
+    {
+      label: 'CV',
+      value: 'Coming Soon',
+      pending: true,
+      soon: true,
     },
   ]
 
@@ -59,7 +95,11 @@ export default function Contact() {
           {rows.map((row) => (
             <li key={row.label}>
               <span className="mono-label contact-list-label">{row.label}</span>
-              {row.pending ? (
+              {row.soon ? (
+                <span className="contact-list-value placeholder-chip">{row.value}</span>
+              ) : !row.href ? (
+                <span className="contact-list-value">{row.value}</span>
+              ) : row.pending ? (
                 <span className="contact-list-value placeholder-chip">{row.value}</span>
               ) : (
                 <a
