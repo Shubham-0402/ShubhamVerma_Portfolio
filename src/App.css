@@ -1,0 +1,16 @@
+.site {
+  position: relative;
+  min-height: 100svh;
+  color: var(--text);
+}
+
+/* keep content above the fixed atmospheric background */
+.site-main {
+  position: relative;
+  z-index: 1;
+}
+
+.site-footer {
+  position: relative;
+  z-index: 1;
+}

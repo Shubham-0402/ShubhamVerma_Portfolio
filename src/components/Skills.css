@@ -1,0 +1,141 @@
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(36px, 5vw, 64px) clamp(40px, 6vw, 96px);
+}
+
+.skill-block {
+  padding-top: 26px;
+  border-top: 2px solid var(--line);
+  transition: border-color 0.3s ease;
+}
+
+.skill-block-head {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 26px;
+}
+
+.skill-index {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.skill-block h3 {
+  margin: 0;
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-tags li {
+  padding: 8px 15px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(11, 18, 36, 0.35);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: #e3ecff;
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s var(--ease-out);
+}
+
+.skill-tags li:hover {
+  transform: translateY(-2px);
+}
+
+/* accent treatment per category */
+.accent-cyan h3 { color: var(--cyan); }
+.accent-cyan .skill-index { color: var(--cyan); }
+.accent-cyan .skill-tags li:hover { border-color: var(--cyan); background: rgba(53, 214, 232, 0.08); }
+
+.accent-blue h3 { color: var(--blue); }
+.accent-blue .skill-index { color: var(--blue); }
+.accent-blue .skill-tags li:hover { border-color: var(--blue); background: rgba(77, 163, 255, 0.08); }
+
+.accent-violet h3 { color: var(--violet); }
+.accent-violet .skill-index { color: var(--violet); }
+.accent-violet .skill-tags li:hover { border-color: var(--violet); background: rgba(139, 124, 255, 0.08); }
+
+.accent-amber h3 { color: var(--amber); }
+.accent-amber .skill-index { color: var(--amber); }
+.accent-amber .skill-tags li:hover { border-color: var(--amber); background: rgba(255, 184, 107, 0.08); }
+
+/* currently focusing panel */
+.skills-focus {
+  margin-top: clamp(64px, 9vw, 110px);
+  padding-top: 34px;
+  border-top: 1px dashed var(--line-strong);
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(36px, 6vw, 90px);
+}
+
+.skills-focus-head {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.skills-focus-head strong {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  background: linear-gradient(110deg, var(--cyan), var(--violet));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.skills-focus-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.skills-focus-list li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-block: 16px;
+  border-bottom: 1px solid var(--line);
+  color: #d5e2ff;
+  font-size: 1rem;
+}
+
+.skills-focus-arrow {
+  flex-shrink: 0;
+  width: 9px;
+  height: 9px;
+  border-top: 2px solid var(--cyan);
+  border-right: 2px solid var(--cyan);
+  transform: rotate(45deg);
+}
+
+.skills-focus-list li:hover .skills-focus-arrow {
+  border-color: var(--amber);
+}
+
+@media (max-width: 860px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-focus {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}

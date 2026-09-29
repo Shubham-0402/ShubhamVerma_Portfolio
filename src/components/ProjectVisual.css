@@ -1,0 +1,88 @@
+.pv {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* shared ink */
+.pv-bracket,
+.pv-face,
+.pv-wire,
+.pv-speech,
+.pv-browser,
+.pv-hand,
+.pv-lab-rig {
+  fill: none;
+  stroke: var(--cyan);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.pv-mono text {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  fill: rgba(214, 228, 255, 0.72);
+}
+
+.pv-dots circle {
+  fill: rgba(141, 178, 255, 0.2);
+}
+
+/* vision scene */
+.pv--vision .pv-bracket { stroke: rgba(53, 214, 232, 0.8); stroke-width: 1.6; }
+.pv--vision .pv-wire { stroke: rgba(143, 170, 255, 0.55); stroke-width: 1.6; }
+.pv--vision .pv-face { stroke: var(--cyan); stroke-width: 2; }
+.pv--vision .pv-face circle { fill: var(--amber); }
+.pv--vision .pv-face path { stroke: rgba(255, 184, 107, 0.9); }
+.pv-scan {
+  fill: var(--blue);
+  opacity: 0.7;
+  animation: pv-scan 3.4s ease-in-out infinite;
+  filter: drop-shadow(0 0 6px rgba(77, 163, 255, 0.8));
+}
+
+/* lab scene */
+.pv--lab .pv-lab-rig { stroke: var(--amber); stroke-width: 2; }
+.pv-flask-liquid { fill: rgba(255, 184, 107, 0.34); stroke: rgba(255, 184, 107, 0.7); stroke-width: 1; }
+.pv--lab .pv-bubbles circle { fill: none; stroke: rgba(53, 214, 232, 0.7); stroke-width: 1.4; }
+.pv--lab .pv-bubbles .pu { animation: pv-rise 3s ease-in-out infinite; }
+.pv-orbit { fill: none; stroke: rgba(139, 124, 255, 0.5); stroke-dasharray: 4 6; }
+.pv--lab .pv-orbit + circle { fill: var(--violet); }
+
+/* sign scene */
+.pv--sign .pv-hand { stroke: var(--cyan); stroke-width: 2.2; }
+.pv--sign .pv-arcs { fill: none; stroke: rgba(139, 124, 255, 0.65); stroke-width: 1.6; stroke-dasharray: 3 5; }
+.pv--sign .pv-speech { stroke: var(--violet); stroke-width: 1.8; }
+.pv--sign .pv-speech line { stroke: rgba(224, 231, 255, 0.7); stroke-width: 3; stroke-linecap: round; }
+
+/* web scene */
+.pv--web .pv-browser { stroke: rgba(77, 163, 255, 0.75); stroke-width: 1.6; }
+.pv--web .pv-browser circle { fill: rgba(255, 255, 255, 0.28); stroke: none; }
+.pv--web .pv-browser rect:last-child { fill: rgba(77, 163, 255, 0.16); stroke: none; }
+.pv--web .pv-code line { stroke: rgba(224, 231, 255, 0.55); stroke-width: 6; stroke-linecap: round; }
+.pv--web .pv-code line:nth-child(6n + 2) { stroke: rgba(53, 214, 232, 0.7); }
+.pv--web .pv-code line:nth-child(6n + 4) { stroke: rgba(255, 184, 107, 0.65); }
+.pv-cursor { fill: var(--cyan); animation: pv-blink-cursor 1.6s steps(1) infinite; }
+
+.pv-blink {
+  animation: pv-blink-cursor 1.2s steps(1) infinite;
+}
+
+@keyframes pv-scan {
+  0%   { transform: translateY(0); opacity: 0.2; }
+  50%  { transform: translateY(64px); opacity: 0.8; }
+  100% { transform: translateY(0); opacity: 0.2; }
+}
+
+@keyframes pv-rise {
+  0%   { transform: translateY(0); opacity: 0.2; }
+  50%  { opacity: 1; }
+  100% { transform: translateY(-22px); opacity: 0.1; }
+}
+
+@keyframes pv-blink-cursor {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
