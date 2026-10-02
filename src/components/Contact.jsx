@@ -4,67 +4,63 @@ import SectionHeading from './SectionHeading'
 import './Contact.css'
 
 export default function Contact() {
-  const emailPending = isPlaceholder(personal.email)
+  const phoneHref = (value) => `tel:${value.replace(/\s/g, '')}`
 
-  const rows = [
+  /* Compact, clickable contact buttons. Everything is driven from
+     portfolioData.js so details stay in one place. */
+  const links = [
     {
-      label: 'Email',
-      value: personal.email,
+      key: 'email',
+      label: personal.email,
       href: `mailto:${personal.email}`,
-      pending: emailPending,
-      external: false,
+      pending: isPlaceholder(personal.email),
     },
     {
-      label: 'Phone (India)',
-      value: personal.phoneIndia,
-      href: `tel:${personal.phoneIndia.replace(/\s/g, '')}`,
+      key: 'phone-india',
+      label: personal.phoneIndia,
+      href: phoneHref(personal.phoneIndia),
       pending: isPlaceholder(personal.phoneIndia),
-      external: false,
     },
     {
-      label: 'Phone (Nepal)',
-      value: personal.phoneNepal,
-      href: `tel:${personal.phoneNepal.replace(/\s/g, '')}`,
+      key: 'phone-nepal',
+      label: personal.phoneNepal,
+      href: phoneHref(personal.phoneNepal),
       pending: isPlaceholder(personal.phoneNepal),
-      external: false,
     },
     {
-      label: 'Location',
-      value: personal.location,
-    },
-    {
+      key: 'github',
       label: 'GitHub',
-      value: personal.github,
       href: personal.github,
       pending: isPlaceholder(personal.github),
       external: true,
     },
     {
+      key: 'linkedin',
       label: 'LinkedIn',
-      value: personal.linkedin,
       href: personal.linkedin,
       pending: isPlaceholder(personal.linkedin),
       external: true,
     },
     {
+      key: 'instagram',
       label: 'Instagram',
-      value: personal.instagram,
       href: personal.instagram,
       pending: isPlaceholder(personal.instagram),
       external: true,
     },
     {
+      key: 'facebook',
       label: 'Facebook',
-      value: personal.facebook,
       href: personal.facebook,
       pending: isPlaceholder(personal.facebook),
       external: true,
     },
     {
-      label: 'CV',
-      value: 'Coming Soon',
-      pending: true,
-      soon: true,
+      key: 'location',
+      label: personal.location,
+      href: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(personal.location)}`,
+      pending: isPlaceholder(personal.location),
+      external: true,
     },
   ]
 
@@ -78,47 +74,23 @@ export default function Contact() {
           className="section-head--center"
         />
 
-        <Reveal className="contact-cta" delay={80}>
-          {emailPending ? (
-            <span className="placeholder-chip">
-              Email <small>YOUR_EMAIL_HERE — edit in portfolioData.js</small>
-            </span>
-          ) : (
-            <a className="btn btn--primary contact-cta-btn" href={`mailto:${personal.email}`}>
-              {personal.email}
-              <span className="btn-arrow" aria-hidden="true">↗</span>
-            </a>
-          )}
-        </Reveal>
-
-        <Reveal as="ul" className="contact-list" delay={140}>
-          {rows.map((row) => (
-            <li key={row.label}>
-              <span className="mono-label contact-list-label">{row.label}</span>
-              {row.soon ? (
-                <span className="contact-list-value placeholder-chip">{row.value}</span>
-              ) : !row.href ? (
-                <span className="contact-list-value">{row.value}</span>
-              ) : row.pending ? (
-                <span className="contact-list-value placeholder-chip">{row.value}</span>
+        <Reveal as="ul" className="contact-links" delay={80}>
+          {links.map((link) => (
+            <li key={link.key}>
+              {link.pending ? (
+                <span className="contact-link placeholder-chip">{link.label}</span>
               ) : (
                 <a
-                  className="contact-list-value"
-                  href={row.href}
-                  {...(row.external ? { target: '_blank', rel: 'noreferrer' } : {})}
+                  className="contact-link"
+                  href={link.href}
+                  {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                 >
-                  {row.value.replace(/^https?:\/\//, '')}
-                  <span className="btn-arrow" aria-hidden="true">↗</span>
+                  {link.label}
+                  {link.external && <span className="btn-arrow" aria-hidden="true">↗</span>}
                 </a>
               )}
             </li>
           ))}
-        </Reveal>
-
-        <Reveal className="contact-closing" delay={120}>
-          <span className="contact-closing-mark" aria-hidden="true" />
-          <h3>{contact.closingTitle}</h3>
-          <p>{contact.closingLine}</p>
         </Reveal>
       </div>
     </section>
