@@ -24,6 +24,7 @@ export const personal = {
   phoneIndia: '+91 7250834662',
   phoneNepal: '+977 9842644498',
   location: 'Trichy, Tamil Nadu, India',
+  cv: '/Shubham-Verma-CV.pdf',
   github: 'https://github.com/Shubham-0402',
   linkedin: 'https://www.linkedin.com/in/shubhamverma-aiml',
   instagram: 'https://www.instagram.com/_shubham_verma_4/',

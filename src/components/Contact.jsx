@@ -62,6 +62,13 @@ export default function Contact() {
       pending: isPlaceholder(personal.location),
       external: true,
     },
+    {
+      key: 'cv',
+      label: 'View CV',
+      href: personal.cv,
+      pending: isPlaceholder(personal.cv),
+      external: true,
+    },
   ]
 
   return (
