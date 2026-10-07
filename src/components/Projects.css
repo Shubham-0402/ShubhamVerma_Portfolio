@@ -14,45 +14,104 @@
   background: var(--line-strong);
 }
 
-.projects-list {
+/* ============================================================
+   CAROUSEL
+   ============================================================ */
+.projects-carousel {
+  position: relative;
+  margin-top: clamp(48px, 7vw, 72px);
   display: flex;
-  flex-direction: column;
-  gap: clamp(90px, 12vw, 160px);
-  margin-top: clamp(56px, 8vw, 90px);
+  align-items: center;
+  justify-content: center;
+  gap: clamp(20px, 3vw, 32px);
 }
 
-/* ---------------- row ---------------- */
-.project {
+/* Carousel viewport - single slide visible */
+.carousel-viewport {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  overflow: hidden;
+  contain: layout paint;
+}
+
+/* Slide container - handles entering/exiting animations */
+.carousel-slide {
+  position: relative;
+  width: 100%;
+  transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1), opacity 400ms ease;
+  will-change: transform, opacity;
+}
+
+/* Active slide - centered */
+.carousel-slide.slide-active {
+  transform: translateX(0);
+  opacity: 1;
+  position: relative;
+  z-index: 2;
+}
+
+/* Exit animations */
+.carousel-slide.slide-exit-left {
+  transform: translateX(-100%);
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.carousel-slide.slide-exit-right {
+  transform: translateX(100%);
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+/* Enter animations */
+.carousel-slide.slide-enter-right {
+  transform: translateX(100%);
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.carousel-slide.slide-enter-left {
+  transform: translateX(-100%);
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+/* When entering, animate to center */
+.carousel-slide.slide-enter-right.slide-active,
+.carousel-slide.slide-enter-left.slide-active {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* ============================================================
+   PROJECT CARD (reusing existing visual style)
+   ============================================================ */
+.project-card {
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
   gap: clamp(36px, 6vw, 84px);
-  align-items: center;
+  align-items: start;
+  min-height: 420px;
 }
 
-.project--alt .project-media {
-  order: 2;
-}
-
-.project--alt .project-info {
-  order: 1;
-}
-
-.project--featured .project-media {
-  position: relative;
-}
-
-.project--featured .project-media::before {
-  content: '';
-  position: absolute;
-  inset: -9% -6%;
-  background: radial-gradient(60% 55% at 30% 20%, rgba(77, 163, 255, 0.22), transparent 70%),
-    radial-gradient(55% 60% at 80% 80%, rgba(53, 214, 232, 0.16), transparent 70%);
-  filter: blur(30px);
-  z-index: 0;
-  pointer-events: none;
-}
-
-/* ---------------- media ---------------- */
+/* Media side */
 .project-media {
   position: relative;
 }
@@ -106,7 +165,7 @@
   color: #d5e2ff;
 }
 
-/* ---------------- info ---------------- */
+/* Info side */
 .project-info {
   display: flex;
   flex-direction: column;
@@ -195,17 +254,135 @@
   align-items: center;
 }
 
-/* ---------------- responsive ---------------- */
-@media (max-width: 900px) {
-  .project,
-  .project--alt {
+/* ============================================================
+   CAROUSEL ARROWS
+   ============================================================ */
+.carousel-arrow {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--line-strong);
+  background: rgba(11, 18, 36, 0.6);
+  color: var(--text);
+  backdrop-filter: blur(8px);
+  transition:
+    border-color 0.25s ease,
+    color 0.25s ease,
+    background 0.25s ease,
+    transform 0.2s var(--ease-out);
+  flex-shrink: 0;
+}
+
+.carousel-arrow:hover:not(:disabled) {
+  border-color: var(--cyan);
+  color: var(--cyan);
+  background: rgba(53, 214, 232, 0.1);
+  transform: scale(1.05);
+}
+
+.carousel-arrow:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+}
+
+.carousel-arrow:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.carousel-arrow svg {
+  display: block;
+}
+
+/* ============================================================
+   INDICATORS
+   ============================================================ */
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: clamp(24px, 3vw, 36px);
+  padding-bottom: clamp(8px, 1vw, 16px);
+}
+
+.carousel-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid var(--line);
+  background: transparent;
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.2s var(--ease-out);
+}
+
+.carousel-indicator:hover {
+  border-color: var(--cyan);
+  background: rgba(53, 214, 232, 0.2);
+  transform: scale(1.15);
+}
+
+.carousel-indicator.is-active {
+  background: var(--cyan);
+  border-color: var(--cyan);
+  box-shadow: 0 0 12px rgba(53, 214, 232, 0.5);
+}
+
+.carousel-indicator:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+}
+
+/* ============================================================
+   COUNTER
+   ============================================================ */
+.carousel-counter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: clamp(8px, 1.5vw, 16px);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+
+.carousel-counter-current {
+  color: var(--cyan);
+  font-weight: 600;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1100px) {
+  .project-card {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 28px;
+    min-height: auto;
   }
 
-  .project--alt .project-media,
-  .project--alt .project-info {
-    order: 0;
+  .project-media {
+    order: -1;
+    max-width: 580px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 900px) {
+  .projects-carousel {
+    gap: 16px;
+  }
+
+  .carousel-arrow {
+    width: 44px;
+    height: 44px;
   }
 
   .project-facts {
@@ -214,5 +391,38 @@
 
   .project-fact--wide {
     grid-column: auto;
+  }
+}
+
+@media (max-width: 560px) {
+  .projects-carousel {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .carousel-arrow {
+    width: 40px;
+    height: 40px;
+  }
+
+  .carousel-arrow--prev {
+    order: 2;
+  }
+
+  .carousel-arrow--next {
+    order: 0;
+  }
+
+  .carousel-viewport {
+    order: 1;
+    width: 100%;
+  }
+
+  .project-art {
+    aspect-ratio: 4 / 3;
+  }
+
+  .project-info h3 {
+    font-size: clamp(1.7rem, 7vw, 2.4rem);
   }
 }
