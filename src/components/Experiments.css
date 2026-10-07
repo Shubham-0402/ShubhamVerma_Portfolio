@@ -47,11 +47,11 @@
 }
 
 .experiment-main h3 {
-  margin: 0 0 10px;
-  font-size: clamp(1.5rem, 3.2vw, 2.4rem);
+  margin: 0 0 8px;
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
   font-weight: 600;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
+  letter-spacing: -0.015em;
+  line-height: 1.15;
 }
 
 .experiment-main p:last-child {
@@ -62,13 +62,13 @@
 
 .experiment-tag {
   align-self: center;
-  padding: 8px 14px;
+  padding: 7px 12px;
   border-radius: 999px;
   border: 1px dashed rgba(255, 184, 107, 0.5);
   color: var(--amber);
   font-family: var(--font-mono);
-  font-size: 0.66rem;
-  letter-spacing: 0.14em;
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   white-space: nowrap;
 }

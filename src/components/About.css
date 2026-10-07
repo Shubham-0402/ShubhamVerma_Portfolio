@@ -6,31 +6,34 @@
 }
 
 .about-accent {
-  margin-top: clamp(28px, 4vw, 44px);
+  margin-top: clamp(24px, 3.5vw, 40px);
   max-width: 24ch;
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: clamp(1.5rem, 3vw, 2.2rem);
-  line-height: 1.35;
+  font-size: clamp(1.4rem, 2.8vw, 2rem);
+  line-height: 1.4;
+  font-weight: 400;
   color: var(--amber);
 }
 
 .about-body {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 22px;
 }
 
 .about-body p {
   color: var(--muted);
-  font-size: 1.06rem;
-  line-height: 1.8;
+  font-size: 1.04rem;
+  line-height: 1.75;
+  font-weight: 400;
 }
 
 .about-body .about-lead {
   color: #dfe8ff;
-  font-size: clamp(1.15rem, 2vw, 1.35rem);
+  font-size: clamp(1.1rem, 1.8vw, 1.28rem);
   line-height: 1.65;
+  font-weight: 400;
 }
 
 .about-highlights {
@@ -49,9 +52,10 @@
 
 .about-highlight strong {
   font-family: var(--font-display);
-  font-size: 1.08rem;
+  font-size: 1.04rem;
   font-weight: 600;
   color: var(--text);
+  letter-spacing: -0.01em;
 }
 
 @media (max-width: 900px) {

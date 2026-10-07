@@ -26,7 +26,7 @@ export const personal = {
   location: 'Trichy, Tamil Nadu, India',
   cv: '/Shubham-Verma-CV.pdf',
   github: 'https://github.com/Shubham-0402',
-  linkedin: 'https://www.linkedin.com/in/shubhamverma-aiml',
+  linkedin: 'https://www.linkedin.com/in/shubham-verma-3474ba3a7',
   instagram: 'https://www.instagram.com/_shubham_verma_4/',
   facebook: 'https://www.facebook.com/profile.php?id=100041730580451',
 }
@@ -314,7 +314,7 @@ export const development = {
   heading: 'Explore my code & repositories.',
   text: 'I build in public — projects, experiments, and source code live on GitHub. Explore the repositories and see how everything here is made.',
   githubUrl: 'https://github.com/Shubham-0402',
-  linkedinUrl: 'https://www.linkedin.com/in/shubhamverma-aiml',
+  linkedinUrl: 'https://www.linkedin.com/in/shubham-verma-3474ba3a7',
 }
 
 export const contact = {

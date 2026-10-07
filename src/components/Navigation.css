@@ -52,10 +52,11 @@
 
 .brand-name {
   font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.22em;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--text);
+  font-weight: 500;
 }
 
 /* desktop nav ---------------------------------------------------------- */
@@ -67,12 +68,13 @@
 
 .nav-desktop a {
   position: relative;
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.16em;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
   color: var(--muted);
   padding-block: 6px;
+  font-weight: 500;
   transition: color 0.25s ease;
 }
 
@@ -113,14 +115,15 @@
 .nav-cta {
   display: inline-flex;
   align-items: center;
-  padding: 9px 18px;
+  padding: 8px 16px;
   border-radius: 999px;
   border: 1px solid var(--line-strong);
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.14em;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
   color: var(--text);
+  font-weight: 500;
   transition:
     border-color 0.25s ease,
     color 0.25s ease,
@@ -209,9 +212,9 @@
   padding-block: clamp(14px, 2.4vh, 22px);
   border-bottom: 1px solid var(--line);
   font-family: var(--font-display);
-  font-size: clamp(1.7rem, 7vw, 2.6rem);
+  font-size: clamp(1.6rem, 6.5vw, 2.4rem);
   font-weight: 600;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.015em;
   color: var(--text);
   opacity: 0;
   transform: translateY(14px);
@@ -241,8 +244,8 @@
 
 .nav-mobile-index {
   font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.16em;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
   color: var(--muted);
 }
 

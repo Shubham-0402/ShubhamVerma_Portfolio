@@ -71,10 +71,10 @@
 
 .journey-arc {
   font-family: var(--font-display);
-  font-size: clamp(1.6rem, 3.4vw, 2.5rem);
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  line-height: 1;
+  font-size: clamp(1.5rem, 3.2vw, 2.3rem);
+  font-weight: 650;
+  letter-spacing: -0.015em;
+  line-height: 1.1;
   color: var(--cyan);
 }
 
@@ -83,19 +83,20 @@
 .journey-stage:nth-child(4n + 4) .journey-arc { color: var(--amber); }
 
 .journey-number {
-  letter-spacing: 0.18em;
+  letter-spacing: 0.1em;
 }
 
 .journey-card h3 {
   margin: 0 0 10px;
-  font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+  font-size: clamp(1.25rem, 2.2vw, 1.6rem);
   font-weight: 600;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
 
 .journey-card p {
   color: var(--muted);
   line-height: 1.7;
+  font-weight: 400;
 }
 
 @media (max-width: 860px) {
